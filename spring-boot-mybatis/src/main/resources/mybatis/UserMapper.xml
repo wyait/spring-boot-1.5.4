@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wyait.boot.dao.UserMapper">
+
+	<select id="findUser" resultType="com.wyait.boot.pojo.User">
+		select id,name,age
+		from
+		user
+		where name=#{name}
+	</select>
+	<select id="findAllUser" resultType="com.wyait.boot.pojo.User">
+		select id,name,age
+		from
+		user
+	</select>
+	<update id="update" parameterType="com.wyait.boot.pojo.User">
+		update user set
+		age=#{age}
+		where id=#{id}
+	</update>
+
+</mapper>
